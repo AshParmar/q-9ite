@@ -20,7 +20,7 @@ We tested the pipeline with a higher mesh resolution setting (Marching Cubes Res
 
 *   **View the 3D Model:** [seed_42.glb](outputs/processed_meshes/seed_42/mesh.glb)
 *   **Source Image:** [seed_42.png](outputs/images/seed_42.png)
-*   **Interactive Preview (GitHub Pages):** https://ashparmar.github.io/q-9ite/docs/
+*   **Interactive Preview (GitHub Pages):** https://ashparmar.github.io/q-9ite
 
 <img src="experiments/blender_ss\Screenshot 2025-12-06 193810.png" width="800" alt="Mesh Analysis in Blender">
 
