@@ -77,7 +77,7 @@ We imported the generated meshes into Blender to inspect the topology and textur
 
 ### High Quality Mesh (Resolution 512) - Best Result
 *Note the smoother surface and cleaner topology.*
-<img src="experiments/blender_ss/Screenshot 2025-12-06 181316.png" width="800">
+<img src="experiments\blender_ss\Screenshot 2025-12-06 193810.png" width="800">
 
 **Technical Analysis:**
 The generated mesh is not watertight and has a high Euler number, which is expected for single-view reconstruction models such as TripoSR. However, the mesh exhibits consistent winding, valid UV textures, and relatively high geometric detail (≈335k faces). Overall, the mesh is of good quality for visualization and demonstrates effective 3D structure recovery given only a single input image.
