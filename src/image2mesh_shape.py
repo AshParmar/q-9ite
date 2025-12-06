@@ -21,7 +21,6 @@ def image_to_shape_mesh(image_path, output_dir):
     batch_size = 2
     guidance_scale = 3.0
     num_inference_steps = 64
-    # size = 256 # Removed as it causes TypeError in current diffusers version
 
     # 1. Generate GIF (Views)
     print("Generating 3D views (GIF)...")
@@ -56,9 +55,6 @@ def image_to_shape_mesh(image_path, output_dir):
     for i, mesh_result in enumerate(mesh_results):
         # Save OBJ using trimesh
         obj_path = os.path.join(output_dir, f"mesh_{i}.obj")
-        
-        # mesh_result is a shap_e.rendering.mesh.Mesh object
-        # It has .verts and .faces attributes
         # They are tensors on GPU, so we need to move them to CPU
         verts = mesh_result.verts.cpu().numpy()
         faces = mesh_result.faces.cpu().numpy()

@@ -16,7 +16,7 @@ def image_to_mesh(image_path: str, output_obj: str, output_tex: str) -> str:
     
     # Run TripoSR: python run.py image.png --output-dir output/
     cmd = [
-        sys.executable, "TripoSR/run.py", 
+        sys.executable, "q9_triposr/run.py", 
         image_path, 
         "--output-dir", output_dir,
         "--mc-resolution", "512",      # Higher resolution for smoother mesh
