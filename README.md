@@ -60,7 +60,7 @@ python experiments/run_experiments.py
 ```
 This will generate a matrix of outputs in the `experiments/` folder, organized by variation type (Steps, Guidance, Seed, etc.).
 
-## 📂 Project Structure
+## Project Structure
 ```
 q-9ite/
 ├── experiments/           # Experiment scripts and results
@@ -86,10 +86,13 @@ q-9ite/
 └── requirements.txt
 ```
 
-## 📊 Experiments & Observations
-See [experiments.md](experiments.md) for a detailed breakdown of how different parameters (Steps, Guidance, Seed) affect the quality of the generated game assets.
+## Experiments & Observations
 
-## ✅ Validation & Metrics
+# [View Full Experiments Report (experiments.md)](experiments.md)
+
+See the link above for a detailed breakdown of how different parameters (Steps, Guidance, Seed) affect the quality of the generated game assets.
+
+## Validation & Metrics
 We implemented an automated validation script (`src/validation.py`) to ensure asset quality. Here are the metrics for this result:
 
 ```json
