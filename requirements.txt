@@ -1,0 +1,17 @@
+# Add required libraries here (e.g., fastapi, diffusers, trimesh, pymeshlab)
+# NOTE: This is a placeholder list; populate with exact versions as needed.
+huggingface-hub
+diffusers
+trimesh
+pymeshlab
+fastapi
+uvicorn
+python-multipart
+jinja2
+python-dotenv
+ipykernel
+ipywidgets
+torch
+transformers
+gradio
+setuptools>=49.6.0
