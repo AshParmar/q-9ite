@@ -2,3 +2,4 @@ q9/
 Q_9ite.egg-info/
 build/
 .env
+src/__pycache__/
