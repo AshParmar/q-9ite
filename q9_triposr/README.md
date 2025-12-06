@@ -8,6 +8,16 @@ This is the official codebase for **TripoSR**, a state-of-the-art open-source mo
 <br><br>
 Leveraging the principles of the [Large Reconstruction Model (LRM)](https://yiconghong.me/LRM/), TripoSR brings to the table key advancements that significantly boost both the speed and quality of 3D reconstruction. Our model is distinguished by its ability to rapidly process inputs, generating high-quality 3D models in less than 0.5 seconds on an NVIDIA A100 GPU. TripoSR has exhibited superior performance in both qualitative and quantitative evaluations, outperforming other open-source alternatives across multiple public datasets. The figures below illustrate visual comparisons and metrics showcasing TripoSR's performance relative to other leading models. Details about the model architecture, training process, and comparisons can be found in this [technical report](https://arxiv.org/abs/2403.02151).
 
+## Repository Context (Q-9ite)
+This folder is a vendored copy of the upstream TripoSR project, kept to ensure reproducibility inside the `q-9ite` pipeline. Minor local tweaks may exist to simplify integration, but the core model and license remain unchanged. For the canonical source, see: https://github.com/VAST-AI-Research/TripoSR
+
+**What remains (minimal footprint):**
+* Core inference entrypoint: `run.py`
+* Model code: `tsr/` (includes `system.py`, `utils.py`, `models/`)
+* Licensing and requirements: `LICENSE`, `requirements.txt`
+
+Removed non-essential assets (e.g., `examples/`, `figures/`) to keep the vendored copy lean.
+
 <!--
 <div align="center">
   <img src="figures/comparison800.gif" alt="Teaser Video">

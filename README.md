@@ -13,6 +13,7 @@ A modular pipeline for generating 3D game assets from text prompts using Stable 
     A lightweight, efficient text-to-image model perfect for generating consistent game assets on consumer hardware.
 *   **[TripoSR](https://github.com/VAST-AI-Research/TripoSR):**  
     A state-of-the-art feed-forward 3D reconstruction model that generates high-quality meshes from a single image in seconds.
+*   **Additional experiments:** Briefly tried **Stable Diffusion Turbo** for faster drafts and **Shape-E** for direct text-to-3D, but the primary pipeline remains SD 1.5 → TripoSR due to quality and stability.
 
 ## Results
 We tested the pipeline with a higher mesh resolution setting (Marching Cubes Resolution: 512).
