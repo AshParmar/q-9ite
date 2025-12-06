@@ -6,7 +6,7 @@ from typing import Optional
 from diffusers import StableDiffusionPipeline
 import torch
 
-def generate_image(prompt: str, seed: Optional[int], steps: int, guidance: float, width: int, height: int, output_path: str) -> str:
+def generate_image(prompt: str, seed: Optional[int], steps: int, guidance: float, width: int , height: int, output_path: str) -> str:
     """
     Placeholder for text-to-image generation.
     """
@@ -30,9 +30,11 @@ if __name__ == "__main__":
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     output_filename = f"outputs/images/img_{timestamp}.png"
     
-    prompt = "a single sci-fi energy orb device, centered, full view, clean silhouette, metallic surfaces, glowing blue core, smooth round shape, simple details, isolated on a plain neutral background, studio lighting, game asset render, highly clear edges"
+    prompt = "a single stylized wooden crate, centered in frame, full object visible, plain grey background, clean simple design, closed crate, 3d game asset render, soft even lighting, no variations, only one crate, product showcase style"
     seed=42
+    width=576
+    height=576
     print(f"Generating image to {output_filename}...")
-    generate_image(prompt, seed, 26, 7.5, output_filename)
+    generate_image(prompt, seed, 26, 7.5, width, height, output_filename)
     print(f"Done. Image saved to {output_filename}")
     output_filename = f"outputs/images/img_{timestamp}_({seed}).png"

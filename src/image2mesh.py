@@ -7,19 +7,24 @@ import subprocess
 import sys
 
 
-def image_to_mesh(image_path: str, output_obj: str, output_tex: str) -> str:
+def image_to_mesh(image_path: str, output_obj: str, output_tex: str, mc_resolution: int = 256) -> str:
     """
     Convert image to 3D mesh using TripoSR.
     """
     output_dir = os.path.dirname(output_obj)
     os.makedirs(output_dir, exist_ok=True)
     
+    # Calculate absolute path to q9_triposr/run.py
+    # This file is in src/, so we go up one level to get to root
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    triposr_script = os.path.join(project_root, "q9_triposr", "run.py")
+
     # Run TripoSR: python run.py image.png --output-dir output/
     cmd = [
-        sys.executable, "q9_triposr/run.py", 
+        sys.executable, triposr_script, 
         image_path, 
         "--output-dir", output_dir,
-        "--mc-resolution", "512",      # Higher resolution for smoother mesh
+        "--mc-resolution", str(mc_resolution),      # Higher resolution for smoother mesh
         "--foreground-ratio", "0.9"    # Ensure object fills the volume
     ]
     if output_tex:
@@ -38,6 +43,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--image", type=str, help="")
+    parser.add_argument("--mc-resolution", type=int, default=256, help="Marching cubes resolution")
     args = parser.parse_args()
 
     image_path = args.image
@@ -58,7 +64,7 @@ if __name__ == "__main__":
     output_dir = os.path.join("outputs", "raw_meshes", base_name)
     output_obj = os.path.join(output_dir, "mesh.obj")
     
-    print(f"Processing {image_path} -> {output_dir}")
-    image_to_mesh(image_path, output_obj, True)
+    print(f"Processing {image_path} -> {output_dir} with resolution {args.mc_resolution}")
+    image_to_mesh(image_path, output_obj, True, mc_resolution=args.mc_resolution)
 
 

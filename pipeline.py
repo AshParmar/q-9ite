@@ -26,6 +26,7 @@ def main():
     parser.add_argument("--input-image", type=str, help="Path to input image if skipping generation")
     parser.add_argument("--skip-mesh", action="store_true", help="Skip mesh generation")
     parser.add_argument("--skip-postprocess", action="store_true", help="Skip post-processing")
+    parser.add_argument("--mesh-resolution", type=int, default=256, help="Marching cubes resolution for mesh generation (default: 256)")
     
     # Output
     parser.add_argument("--output-dir", type=str, default="outputs", help="Base output directory")
@@ -81,7 +82,7 @@ def main():
     output_obj_placeholder = os.path.join(raw_mesh_dir, "mesh.obj")
     
     try:
-        raw_mesh_path = image_to_mesh(image_path, output_obj_placeholder, True)
+        raw_mesh_path = image_to_mesh(image_path, output_obj_placeholder, True, args.mesh_resolution)
         print(f"Raw mesh generated at: {raw_mesh_path}")
     except Exception as e:
         print(f"Error during mesh generation: {e}")
