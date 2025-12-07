@@ -112,7 +112,7 @@ We implemented an automated validation script (`src/validation.py`) to ensure as
 **Analysis:**
 The generated mesh is not watertight and has a high Euler number, which is expected for single-view reconstruction models such as TripoSR. However, the mesh exhibits consistent winding, valid UV textures, and relatively high geometric detail (≈335k faces). Overall, the mesh is of good quality for visualization and demonstrates effective 3D structure recovery given only a single input image.
 
-## 📝 Internship Task Report
+## Task Report
 
 ### 1. What model/tool you used and why?
 *   **Stable Diffusion 1.5:** Chosen for its reliability and speed. It provides a solid baseline for generating game assets like isometric items and props without the heavy hardware requirements of SDXL.
