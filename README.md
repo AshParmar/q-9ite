@@ -38,7 +38,7 @@ We tested the pipeline with a higher mesh resolution setting (Marching Cubes Res
     ```
     *Note: Ensure you have a GPU with CUDA support for optimal performance.*
 
-## 📖 Usage
+## Usage
 
 ### 1. Generate a Single Asset
 Use the main pipeline script to generate an asset from scratch.
