@@ -136,10 +136,10 @@ We conducted controlled experiments varying:
 *   **PBR Texture Maps:** Generate Normal, Roughness, and Metallic maps to make the assets truly game-ready for engines like Unity/Unreal.
 *   **Automated LODs:** Integrate a mesh decimation step to automatically generate Low, Medium, and High poly versions of the asset.
 
-## 📝 License
+## License
 Apache License
 
-## 🙏 Credits & Acknowledgements
+## Credits & Acknowledgements
 *   **[TripoSR](https://github.com/VAST-AI-Research/TripoSR):** Developed by VAST AI Research and Stability AI. We use their model and repo, modified it for our needs & for fast feed-forward 3D reconstruction.
 *   **[Stable Diffusion v1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5):** Developed by RunwayML and Stability AI. Used as the backbone for text-to-image generation.
 
