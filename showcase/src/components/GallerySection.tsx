@@ -5,9 +5,11 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "model-viewer": any;
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements {
+        "model-viewer": any;
+      }
     }
   }
 }
