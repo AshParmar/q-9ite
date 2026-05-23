@@ -186,7 +186,6 @@ export default function ChallengesSection() {
             style={{
               marginTop: "3rem",
               padding: "2rem",
-              background: "var(--bg-card)",
               border: "1px solid rgba(99,102,241,0.2)",
               borderRadius: 16,
               background: "linear-gradient(135deg, rgba(99,102,241,0.05), rgba(34,211,238,0.03))",
