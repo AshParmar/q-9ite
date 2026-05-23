@@ -2,6 +2,8 @@
 
 A modular pipeline for generating 3D game assets from text prompts using Stable Diffusion and TripoSR. This project demonstrates how machine learning can streamline the asset creation process for game developers.
 
+**🌐 Showcase Site:** [ashparmar.github.io/q-9ite](https://ashparmar.github.io/q-9ite) — Interactive 3D gallery, experiment dashboard & pipeline visualization.
+
 ## Features
 *   **Text-to-Image:** Generates concept art using Stable Diffusion 1.5.
 *   **Image-to-3D:** Converts generated images into 3D meshes (`.glb`, `.obj`) using TripoSR.
@@ -20,9 +22,10 @@ We tested the pipeline with a higher mesh resolution setting (Marching Cubes Res
 
 *   **View the 3D Model:** [seed_42.glb](outputs/processed_meshes/seed_42/mesh.glb)
 *   **Source Image:** [seed_42.png](outputs/images/seed_42.png)
-*   **Interactive Preview (GitHub Pages):** https://ashparmar.github.io/q-9ite
+*   **Interactive Showcase:** https://ashparmar.github.io/q-9ite
 
-<img src="experiments/blender_ss\Screenshot 2025-12-06 193810.png" width="800" alt="Mesh Analysis in Blender">
+<img src="experiments/blender_ss/Screenshot 2025-12-06 193810.png" width="800" alt="Mesh Analysis in Blender">
+
 
 ## 🛠️ Installation
 
