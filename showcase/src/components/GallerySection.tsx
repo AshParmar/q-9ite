@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-namespace */
 declare global {
   namespace React {
     namespace JSX {
@@ -13,6 +14,7 @@ declare global {
     }
   }
 }
+/* eslint-enable @typescript-eslint/no-namespace */
 
 const galleryItems = [
   {
@@ -30,7 +32,7 @@ const galleryItems = [
     id: "seed999",
     title: "High-Stylization Variant",
     prompt: "a cute stylized robot mascot, round body, thick arms and legs, glossy metal surface, full body centered, studio lighting",
-    image: "/assets/outputs/images/seed_999.png",
+    image: "/assets/outputs/images/seed_999_input.png",
     glb: "/assets/outputs/processed_meshes/seed_999 copy/mesh.glb",
     params: { seed: 999, guidance: 12.0, steps: 30, meshRes: 256 },
     metrics: { vertices: "~98k", faces: "~120k", watertight: false, uvTexture: true },
@@ -63,6 +65,26 @@ const galleryItems = [
 
 function ModelViewer({ glb, title }: { glb: string; title: string }) {
   const [loading, setLoading] = useState(true);
+  const modelRef = useRef<any>(null);
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setLoading(false);
+    };
+    const node = modelRef.current;
+    if (node) {
+      node.addEventListener("load", handleLoad);
+      // In case it's already loaded before the listener is attached
+      if (node.loaded) {
+        setLoading(false);
+      }
+    }
+    return () => {
+      if (node) {
+        node.removeEventListener("load", handleLoad);
+      }
+    };
+  }, [glb]);
 
   return (
     <div style={{ width: "100%", height: 320, position: "relative", borderRadius: 12, overflow: "hidden" }}>
@@ -83,6 +105,7 @@ function ModelViewer({ glb, title }: { glb: string; title: string }) {
         </div>
       )}
       <model-viewer
+        ref={modelRef}
         src={glb}
         alt={title}
         auto-rotate
@@ -90,7 +113,6 @@ function ModelViewer({ glb, title }: { glb: string; title: string }) {
         shadow-intensity="1"
         exposure="1.2"
         style={{ width: "100%", height: "100%", backgroundColor: "transparent" }}
-        onLoad={() => setLoading(false)}
       />
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
@@ -369,7 +391,7 @@ export default function GallerySection() {
                         fontFamily: "var(--font-mono)",
                         lineHeight: 1.6,
                       }}>
-                        "{selected.prompt}"
+                        &quot;{selected.prompt}&quot;
                       </div>
                     </div>
 

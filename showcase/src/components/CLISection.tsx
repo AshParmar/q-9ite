@@ -75,8 +75,11 @@ function TerminalOutput({ lines, running }: {
   const [visible, setVisible] = useState<number>(0);
 
   useEffect(() => {
-    if (!running) { setVisible(0); return; }
-    setVisible(0);
+    if (!running) { 
+      setTimeout(() => setVisible(0), 0);
+      return; 
+    }
+    setTimeout(() => setVisible(0), 0);
     const timers: ReturnType<typeof setTimeout>[] = [];
     lines.forEach((_, i) => {
       timers.push(
