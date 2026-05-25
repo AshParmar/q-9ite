@@ -86,7 +86,7 @@ The generated mesh is not watertight and has a high Euler number, which is expec
 
 ### Standard Mesh (Resolution 256)
 <img src="experiments/blender_ss/Screenshot 2025-12-06 175006.png" width="800">
-
+`
 ### Draft Mesh (Resolution 128)
 <img src="experiments/blender_ss/Screenshot 2025-12-06 174202.png" width="800">
 

@@ -36,7 +36,4 @@ showcase/.vercel
 showcase/*.tsbuildinfo
 showcase/next-env.d.ts
 
-# ── Large generated outputs (tracked separately via Git LFS or ignored) ──
-# Uncomment below if you want to exclude large mesh files:
-# outputs/processed_meshes/**/*.obj
-# outputs/raw_meshes/
+ 
